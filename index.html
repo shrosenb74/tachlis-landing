@@ -33,6 +33,7 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--parchment);
@@ -650,16 +651,6 @@ function pickChoice(el, correct) {
   document.querySelector('.choice.correct').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// -------------------------------------------------------
-// BEEHIIV CONFIGURATION
-// Replace these two values with your own from Beehiiv:
-//   Settings → API → Create API key
-//   Settings → Publication → Publication ID
-// -------------------------------------------------------
-var BEEHIIV_API_KEY = '78YJL8PaFWi17sN8WFTeYmDY8f52QanfRdw6QrQTOCztO5AkWTDGkdonhPDNn17V';
-var BEEHIIV_PUB_ID  = 'pub_8367416a-25ad-4ad0-9cba-f11b89b69bfa';
-// -------------------------------------------------------
-
 function submit(section) {
   var input   = document.getElementById(section + '-email');
   var form    = document.getElementById(section + '-form');
@@ -673,34 +664,21 @@ function submit(section) {
     return;
   }
 
-  // Show success immediately — don't make user wait for API
+  // Show success immediately
   form.style.display    = 'none';
   success.style.display = 'block';
 
-  // POST to Beehiiv
-  fetch('https://api.beehiiv.com/v2/publications/' + BEEHIIV_PUB_ID + '/subscriptions', {
+  // POST to Netlify Function (calls Beehiiv server-side, avoids CORS)
+  fetch('/.netlify/functions/subscribe', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + BEEHIIV_API_KEY
-    },
-    body: JSON.stringify({
-      email: email,
-      reactivate_existing: false,
-      send_welcome_email: true,
-      utm_source: document.referrer || 'direct',
-      utm_medium: 'landing_page',
-      utm_campaign: 'validation'
-    })
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
   })
   .then(function(res) {
-    if (!res.ok) {
-      // Silently log — user already sees success, no need to alarm them
-      console.warn('Beehiiv signup error:', res.status);
-    }
+    if (!res.ok) console.warn('Signup error:', res.status);
   })
   .catch(function(err) {
-    console.warn('Beehiiv signup failed:', err);
+    console.warn('Signup failed:', err);
   });
 }
 </script>
