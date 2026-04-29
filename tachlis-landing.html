@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tachlis — Judaism. No fluff. | tachlis.io</title>
+<!-- SEO -->
+<meta name="description" content="Tachlis teaches you Judaism in 5 minutes a day. No Hebrew school guilt. No jargon. Just the stuff you actually want to know.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tachlis.io">
+<!-- Open Graph -->
+<meta property="og:title" content="Tachlis — Judaism. No fluff.">
+<meta property="og:description" content="For Jews who are bad at being Jewish. Learn Judaism in 5 minutes a day.">
+<meta property="og:url" content="https://tachlis.io">
+<meta property="og:type" content="website">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tachlis — Judaism. No fluff.">
+<meta name="twitter:description" content="For Jews who are bad at being Jewish. Learn Judaism in 5 minutes a day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2C2C2A;
+    --parchment: #F1EFE8;
+    --parchment-dark: #E4E1D6;
+    --pomegranate: #D85A30;
+    --pomegranate-dark: #B84A24;
+    --olive: #1D9E75;
+    --honey: #EF9F27;
+    --text-muted: #888780;
+    --border: rgba(44,44,42,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--parchment);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border);
+    background: var(--parchment);
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-mark {
+    width: 36px; height: 36px;
+    background: var(--ink);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px; color: var(--parchment);
+    flex-shrink: 0;
+  }
+  .nav-word {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+  .nav-cta {
+    background: var(--pomegranate);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 500;
+    padding: 9px 20px;
+    border-radius: 100px;
+    border: none; cursor: pointer;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--pomegranate-dark); }
+
+  /* HERO */
+  .hero {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--pomegranate);
+    border: 1px solid rgba(216,90,48,.3);
+    padding: 4px 14px; border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--pomegranate);
+  }
+  .hero-sub {
+    font-size: 18px; line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 520px; margin: 0 auto 40px;
+    font-weight: 300;
+  }
+
+  /* EMAIL FORM */
+  .email-form {
+    display: flex; gap: 0;
+    max-width: 440px; margin: 0 auto 16px;
+    border: 1.5px solid var(--ink);
+    border-radius: 100px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .email-form input {
+    flex: 1;
+    border: none; outline: none;
+    padding: 14px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; color: var(--ink);
+    background: transparent;
+  }
+  .email-form input::placeholder { color: #aaa9a4; }
+  .email-form button {
+    background: var(--ink);
+    color: var(--parchment);
+    border: none; cursor: pointer;
+    padding: 0 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 500;
+    border-radius: 0 100px 100px 0;
+    white-space: nowrap;
+    transition: background .2s;
+  }
+  .email-form button:hover { background: #444441; }
+  .form-sub {
+    font-size: 12px; color: var(--text-muted);
+    text-align: center;
+  }
+
+  /* SOCIAL PROOF ROW */
+  .proof-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 24px; margin-top: 44px;
+    flex-wrap: wrap;
+  }
+  .proof-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .proof-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--parchment-dark);
+  }
+
+  /* DIVIDER TEXT */
+  .section-divider {
+    display: flex; align-items: center; gap: 16px;
+    max-width: 780px; margin: 0 auto;
+    padding: 0 40px;
+  }
+  .section-divider hr {
+    flex: 1; border: none;
+    border-top: 1px solid var(--border);
+  }
+  .section-divider span {
+    font-size: 12px; color: var(--text-muted);
+    white-space: nowrap; letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  /* LESSON PREVIEW */
+  .lesson-section {
+    max-width: 780px; margin: 0 auto;
+    padding: 60px 40px;
+  }
+  .lesson-label {
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: .1em;
+    color: var(--text-muted); margin-bottom: 28px;
+    text-align: center;
+  }
+  .lesson-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .lesson-top-bar {
+    background: var(--ink);
+    padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .lesson-topic {
+    font-size: 12px; font-weight: 500;
+    color: rgba(241,239,232,.6);
+    text-transform: uppercase; letter-spacing: .08em;
+  }
+  .lesson-progress-wrap {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .lesson-progress-bar {
+    width: 80px; height: 4px;
+    background: rgba(241,239,232,.2);
+    border-radius: 2px; overflow: hidden;
+  }
+  .lesson-progress-fill {
+    width: 40%; height: 100%;
+    background: var(--pomegranate);
+    border-radius: 2px;
+  }
+  .lesson-progress-text {
+    font-size: 11px; color: rgba(241,239,232,.5);
+  }
+  .lesson-body { padding: 28px 24px; }
+  .lesson-q-label {
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: .08em;
+    color: var(--text-muted); margin-bottom: 10px;
+  }
+  .lesson-question {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; line-height: 1.3;
+    color: var(--ink); margin-bottom: 22px;
+  }
+  .lesson-choices { display: flex; flex-direction: column; gap: 8px; }
+  .choice {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 13px 16px;
+    font-size: 14px; color: var(--ink);
+    cursor: pointer; transition: border-color .15s, background .15s;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .choice:hover { border-color: rgba(44,44,42,.3); background: #fafaf8; }
+  .choice.correct {
+    border-color: var(--olive);
+    background: rgba(29,158,117,.06);
+    color: #0c5e41;
+  }
+  .choice.correct .choice-letter { background: var(--olive); color: #fff; }
+  .choice-letter {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--parchment-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 500; flex-shrink: 0;
+    margin-right: 12px; color: var(--text-muted);
+  }
+  .choice-text { flex: 1; }
+  .lesson-explanation {
+    margin-top: 16px;
+    background: rgba(29,158,117,.08);
+    border-left: 3px solid var(--olive);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    font-size: 13px; color: #0c5e41; line-height: 1.6;
+  }
+
+  /* ABOUT SECTION */
+  .about-section {
+    border-top: 1px solid var(--border);
+    max-width: 780px; margin: 0 auto;
+    padding: 60px 40px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px; margin-top: 40px;
+  }
+  .about-item {}
+  .about-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px; color: var(--pomegranate);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .about-label {
+    font-size: 15px; font-weight: 500;
+    color: var(--ink); margin-bottom: 6px;
+  }
+  .about-desc {
+    font-size: 13px; color: var(--text-muted); line-height: 1.6;
+  }
+
+  /* HOW IT WORKS */
+  .how-section {
+    background: var(--ink);
+    padding: 70px 40px;
+    text-align: center;
+  }
+  .how-inner { max-width: 780px; margin: 0 auto; }
+  .how-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--parchment); margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  .how-sub {
+    font-size: 16px; color: rgba(241,239,232,.55);
+    margin-bottom: 48px; font-weight: 300;
+  }
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2px;
+  }
+  .how-item {
+    background: rgba(241,239,232,.05);
+    padding: 28px 24px; text-align: left;
+  }
+  .how-item:first-child { border-radius: 16px 0 0 16px; }
+  .how-item:last-child { border-radius: 0 16px 16px 0; }
+  .how-step {
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: .1em;
+    color: var(--pomegranate); margin-bottom: 12px;
+  }
+  .how-item-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: var(--parchment);
+    margin-bottom: 8px; line-height: 1.2;
+  }
+  .how-item-desc {
+    font-size: 13px; color: rgba(241,239,232,.5); line-height: 1.6;
+  }
+
+  /* TESTIMONIAL */
+  .testimonial-section {
+    max-width: 780px; margin: 0 auto;
+    padding: 70px 40px;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+  }
+  .testimonial-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 20px;
+  }
+  .testimonial-text {
+    font-size: 14px; line-height: 1.65;
+    color: var(--ink); margin-bottom: 16px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .author-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--parchment-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 500; color: var(--text-muted);
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .author-desc { font-size: 11px; color: var(--text-muted); }
+
+  /* BOTTOM CTA */
+  .bottom-cta {
+    background: var(--pomegranate);
+    padding: 70px 40px; text-align: center;
+  }
+  .bottom-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    color: #fff; margin-bottom: 12px;
+    letter-spacing: -0.5px; line-height: 1.15;
+  }
+  .bottom-cta p {
+    font-size: 16px; color: rgba(255,255,255,.75);
+    margin-bottom: 36px; font-weight: 300;
+  }
+  .bottom-form {
+    display: flex; gap: 0;
+    max-width: 420px; margin: 0 auto;
+    border: 2px solid rgba(255,255,255,.4);
+    border-radius: 100px; overflow: hidden;
+    background: rgba(255,255,255,.12);
+  }
+  .bottom-form input {
+    flex: 1; border: none; outline: none;
+    padding: 14px 20px;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; color: #fff;
+  }
+  .bottom-form input::placeholder { color: rgba(255,255,255,.5); }
+  .bottom-form button {
+    background: #fff; color: var(--pomegranate);
+    border: none; cursor: pointer;
+    padding: 0 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 500;
+    border-radius: 0 100px 100px 0;
+    white-space: nowrap;
+    transition: background .2s;
+  }
+  .bottom-form button:hover { background: var(--parchment); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+    max-width: 780px; margin: 0 auto;
+  }
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px; color: var(--ink);
+  }
+  .footer-note { font-size: 12px; color: var(--text-muted); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero h1 { animation: fadeUp .6s ease both; }
+  .hero-sub { animation: fadeUp .6s .12s ease both; }
+  .email-form { animation: fadeUp .6s .22s ease both; }
+  .form-sub { animation: fadeUp .6s .28s ease both; }
+  .proof-row { animation: fadeUp .6s .36s ease both; }
+
+  /* SUCCESS STATE */
+  .success-msg {
+    display: none;
+    background: rgba(29,158,117,.1);
+    border: 1px solid rgba(29,158,117,.3);
+    border-radius: 100px;
+    padding: 12px 24px;
+    font-size: 14px; color: #0c5e41;
+    text-align: center; max-width: 440px; margin: 0 auto;
+  }
+
+  @media(max-width:600px){
+    nav { padding: 16px 20px; }
+    .hero, .lesson-section, .about-section, .testimonial-section { padding: 48px 20px; }
+    .how-section, .bottom-cta { padding: 50px 20px; }
+    footer { padding: 24px 20px; }
+    .how-item:first-child { border-radius: 16px 16px 0 0; }
+    .how-item:last-child { border-radius: 0 0 16px 16px; }
+    .email-form, .bottom-form { flex-direction: column; border-radius: 16px; }
+    .email-form input, .bottom-form input { padding: 14px 16px; }
+    .email-form button, .bottom-form button { border-radius: 0 0 14px 14px; padding: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-mark">ת</div>
+    <span class="nav-word">Tachlis</span>
+  </a>
+  <a class="nav-cta" href="#bottom-cta">Get early access</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Coming soon &nbsp;·&nbsp; Jewish literacy app</div>
+  <h1>For Jews who are <em>bad</em> at being Jewish.</h1>
+  <p class="hero-sub">Tachlis teaches you Judaism in 5 minutes a day. No Hebrew school guilt. No jargon. Just the stuff you actually want to know.</p>
+
+  <div class="email-form" id="hero-form">
+    <input type="email" id="hero-email" placeholder="your@email.com" />
+    <button onclick="submit('hero')">Get early access</button>
+  </div>
+  <div class="success-msg" id="hero-success">You're on the list. We'll be in touch before launch.</div>
+  <p class="form-sub">Free early access &nbsp;·&nbsp; No spam, ever</p>
+
+  <div class="proof-row">
+    <div class="proof-item"><div class="proof-dot"></div>5 minutes a day</div>
+    <div class="proof-item"><div class="proof-dot"></div>Holidays, prayers, history</div>
+    <div class="proof-item"><div class="proof-dot"></div>No prior knowledge needed</div>
+    <div class="proof-item"><div class="proof-dot"></div>Actually fun</div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider">
+  <hr><span>Try a lesson</span><hr>
+</div>
+
+<!-- LESSON PREVIEW -->
+<section class="lesson-section">
+  <p class="lesson-label">Sample lesson — Rosh Hashanah</p>
+  <div class="lesson-card">
+    <div class="lesson-top-bar">
+      <span class="lesson-topic">Rosh Hashanah · lesson 1</span>
+      <div class="lesson-progress-wrap">
+        <div class="lesson-progress-bar"><div class="lesson-progress-fill"></div></div>
+        <span class="lesson-progress-text">2 of 5</span>
+      </div>
+    </div>
+    <div class="lesson-body">
+      <p class="lesson-q-label">Question</p>
+      <p class="lesson-question">The shofar is blown on Rosh Hashanah. What is it actually made from?</p>
+      <div class="lesson-choices">
+        <div class="choice" onclick="pickChoice(this, false)">
+          <span class="choice-letter">A</span>
+          <span class="choice-text">A carved wooden horn</span>
+        </div>
+        <div class="choice correct" onclick="pickChoice(this, true)">
+          <span class="choice-letter">B</span>
+          <span class="choice-text">A ram's horn</span>
+        </div>
+        <div class="choice" onclick="pickChoice(this, false)">
+          <span class="choice-letter">C</span>
+          <span class="choice-text">A type of brass instrument</span>
+        </div>
+        <div class="choice" onclick="pickChoice(this, false)">
+          <span class="choice-letter">D</span>
+          <span class="choice-text">A clay pipe</span>
+        </div>
+      </div>
+      <div class="lesson-explanation" id="explanation" style="display:none">
+        Correct. A shofar is made from a ram's horn — no mouthpiece, no keys, just breath and lip pressure. It's one of the oldest instruments in the world, and it sounds exactly like you'd expect a parking-lot trumpet from 3,000 BC to sound. That's the point. It's supposed to be raw.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / STATS -->
+<section class="about-section">
+  <p style="font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,38px);letter-spacing:-.5px;line-height:1.2;margin-bottom:8px">Judaism has 4,000 years of content.<br>You have 5 minutes.</p>
+  <p style="font-size:16px;color:var(--text-muted);font-weight:300">Tachlis gets you to the point.</p>
+  <div class="about-grid">
+    <div class="about-item">
+      <p class="about-num">5</p>
+      <p class="about-label">Minutes per day</p>
+      <p class="about-desc">Each lesson is designed for a commute, a coffee break, or that moment before bed when you'd otherwise scroll Instagram.</p>
+    </div>
+    <div class="about-item">
+      <p class="about-num">30+</p>
+      <p class="about-label">Topics covered at launch</p>
+      <p class="about-desc">Holidays, prayers, history, Hebrew basics, lifecycle events — the full picture, explained without the condescension.</p>
+    </div>
+    <div class="about-item">
+      <p class="about-num">0</p>
+      <p class="about-label">Hebrew school required</p>
+      <p class="about-desc">Whether you had a Bar Mitzvah or can't spell "menorah," Tachlis starts wherever you are.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-inner">
+    <h2 class="how-title">How it works</h2>
+    <p class="how-sub">No app yet — but here's what's coming.</p>
+    <div class="how-grid">
+      <div class="how-item">
+        <p class="how-step">Step 01</p>
+        <p class="how-item-title">Pick a topic</p>
+        <p class="how-item-desc">Holidays, prayers, Jewish history, or Hebrew basics. Start wherever you're most curious.</p>
+      </div>
+      <div class="how-item">
+        <p class="how-step">Step 02</p>
+        <p class="how-item-title">5-minute lesson</p>
+        <p class="how-item-desc">Short questions, clear explanations, one "huh, I didn't know that" moment per lesson. Guaranteed.</p>
+      </div>
+      <div class="how-item">
+        <p class="how-step">Step 03</p>
+        <p class="how-item-title">Build a streak</p>
+        <p class="how-item-desc">Come back tomorrow. And the day after. Judaism is a daily practice — Tachlis makes it one too.</p>
+      </div>
+      <div class="how-item">
+        <p class="how-step">Step 04</p>
+        <p class="how-item-title">Actually know stuff</p>
+        <p class="how-item-desc">Show up to Passover this year knowing what the four questions actually mean. Your family will be shocked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS (placeholder quotes from target persona) -->
+<section class="testimonial-section">
+  <p style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);text-align:center;margin-bottom:28px">What people like you are saying they need</p>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-text">"I sat through an entire Yom Kippur service nodding along and understood maybe 15% of it. I need this."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">RS</div>
+        <div><p class="author-name">Rachel S.</p><p class="author-desc">Reform Jew, Chicago</p></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"My kids ask me why we do things on holidays and I just say 'it's tradition' because I genuinely don't know. Embarrassing."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">DL</div>
+        <div><p class="author-name">David L.</p><p class="author-desc">Jewish dad, New York</p></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"I identify as Jewish but I couldn't tell you the difference between Shavuot and Sukkot. That bothers me more than I admit."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">MG</div>
+        <div><p class="author-name">Maya G.</p><p class="author-desc">Cultural Jew, LA</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta" id="bottom-cta">
+  <h2>Get in early.<br>Learn Judaism. Finally.</h2>
+  <p>Join the waitlist and get free early access when we launch.</p>
+  <div class="bottom-form" id="bottom-form">
+    <input type="email" id="bottom-email" placeholder="your@email.com" />
+    <button onclick="submit('bottom')">Join waitlist</button>
+  </div>
+  <div class="success-msg" id="bottom-success" style="border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.15)">You're on the list. We'll reach out before launch.</div>
+  <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:14px">Free early access. Unsubscribe anytime.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Tachlis</span>
+  <span class="footer-note">Judaism. No fluff. &nbsp;·&nbsp; tachlis.io &nbsp;·&nbsp; © 2026</span>
+</footer>
+
+<script>
+function pickChoice(el, correct) {
+  document.querySelectorAll('.choice').forEach(function(c) {
+    c.style.pointerEvents = 'none';
+  });
+  if (!correct) {
+    el.style.background = '#fff8f6';
+    el.style.borderColor = '#f09595';
+    el.style.color = '#a32d2d';
+  }
+  document.getElementById('explanation').style.display = 'block';
+  document.querySelector('.choice.correct').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// -------------------------------------------------------
+// BEEHIIV CONFIGURATION
+// Replace these two values with your own from Beehiiv:
+//   Settings → API → Create API key
+//   Settings → Publication → Publication ID
+// -------------------------------------------------------
+var BEEHIIV_API_KEY = 'YOUR_API_KEY_HERE';
+var BEEHIIV_PUB_ID  = 'YOUR_PUBLICATION_ID_HERE';
+// -------------------------------------------------------
+
+function submit(section) {
+  var input   = document.getElementById(section + '-email');
+  var form    = document.getElementById(section + '-form');
+  var success = document.getElementById(section + '-success');
+  var email   = input.value.trim();
+
+  // Basic validation
+  if (!email || !email.includes('@')) {
+    input.style.outline = '2px solid #D85A30';
+    input.focus();
+    return;
+  }
+
+  // Show success immediately — don't make user wait for API
+  form.style.display    = 'none';
+  success.style.display = 'block';
+
+  // POST to Beehiiv
+  fetch('https://api.beehiiv.com/v2/publications/' + BEEHIIV_PUB_ID + '/subscriptions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + BEEHIIV_API_KEY
+    },
+    body: JSON.stringify({
+      email: email,
+      reactivate_existing: false,
+      send_welcome_email: true,
+      utm_source: document.referrer || 'direct',
+      utm_medium: 'landing_page',
+      utm_campaign: 'validation'
+    })
+  })
+  .then(function(res) {
+    if (!res.ok) {
+      // Silently log — user already sees success, no need to alarm them
+      console.warn('Beehiiv signup error:', res.status);
+    }
+  })
+  .catch(function(err) {
+    console.warn('Beehiiv signup failed:', err);
+  });
+}
+</script>
+</body>
+</html>
