@@ -31,7 +31,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--parchment);color:var(--ink);-webkit-font-smoothing:antialiased}
- 
+
 /* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);background:var(--parchment);position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
@@ -39,7 +39,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .nav-word{font-family:'Playfair Display',serif;font-size:19px;color:var(--ink);letter-spacing:-.3px}
 .nav-cta{background:var(--ink);color:var(--parchment);font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:background .2s}
 .nav-cta:hover{background:#2D5C3E}
- 
+
 /* HERO */
 .hero{max-width:680px;margin:0 auto;padding:32px 24px 24px;text-align:center}
 .hero-eyebrow{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(45,122,79,.3);padding:4px 13px;border-radius:100px;margin-bottom:20px}
@@ -47,11 +47,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .hero h1 em{font-style:italic;color:var(--green)}
 .hero-sub{font-size:15px;line-height:1.6;color:var(--muted);max-width:480px;margin:0 auto 8px;font-weight:300}
 .hero-sub strong{font-weight:500;color:var(--ink)}
- 
+
 /* LESSON CARD */
 .lesson-wrap{max-width:680px;margin:0 auto;padding:0 24px 24px}
 .lesson-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;text-align:center}
- 
+
 .lesson-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(26,58,42,0.08)}
 .lesson-topbar{background:var(--ink);padding:13px 20px;display:flex;align-items:center;justify-content:space-between}
 .lesson-topic{font-size:11px;font-weight:500;color:rgba(245,240,232,.55);text-transform:uppercase;letter-spacing:.08em}
@@ -59,7 +59,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .lesson-progress{width:80px;height:3px;background:rgba(245,240,232,.2);border-radius:2px;overflow:hidden}
 .lesson-progress-fill{height:100%;border-radius:2px;background:var(--honey)}
 .lesson-progress-text{font-size:11px;color:rgba(245,240,232,.45)}
- 
+
 /* LESSON STEPS */
 .lesson-step{padding:20px 20px;border-bottom:1px solid var(--parchment-dark);display:none}
 .lesson-step.active{display:block}
@@ -70,7 +70,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .lesson-fact p:last-child{margin-bottom:0}
 .lesson-fact strong{font-weight:500;color:var(--ink)}
 .lesson-fact em{font-style:italic;color:var(--green)}
- 
+
 /* CHOICES */
 .choices{display:flex;flex-direction:column;gap:8px;margin-bottom:0}
 .choice{border:1.5px solid var(--border);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px;user-select:none;background:#fff}
@@ -79,7 +79,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .choice.correct .choice-letter{background:var(--green);color:#fff}
 .choice.wrong{border-color:#f09595;background:#fff8f6;color:#a32d2d}
 .choice-letter{width:26px;height:26px;border-radius:50%;background:var(--parchment-dark);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;color:var(--muted)}
- 
+
 /* EXPLANATION */
 .explanation{margin-top:14px;background:rgba(45,122,79,.06);border-left:3px solid var(--green);border-radius:0 10px 10px 0;padding:12px 16px;font-size:13px;color:#0c5e41;line-height:1.7;display:none}
 .explanation.show{display:block}
@@ -89,33 +89,38 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .explanation.show-wrong .exp-wrong{display:inline}
 .explanation.show-wrong{background:rgba(122,120,112,0.08);border-left-color:#7A7870;color:#5A5850;}
 .explanation.show-correct{background:rgba(45,122,79,.06);border-left-color:#2D7A4F;color:#0c5e41;}
- 
+
 /* NEXT BUTTON */
 .lesson-nav{padding:16px 28px;display:flex;justify-content:flex-end;display:none}
 .lesson-nav.show{display:flex}
 .next-btn{background:var(--ink);color:var(--parchment);border:none;padding:10px 24px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background .2s}
 .next-btn:hover{background:#2D5C3E}
- 
+
 /* SIGNUP GATE */
 .signup-gate{padding:20px 16px;text-align:center;background:var(--parchment);display:none}
 .signup-gate.show{display:block}
 .gate-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px}
 .gate-sub{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;font-weight:300}
 .email-form{display:flex;max-width:380px;margin:0 auto 10px;border:1.5px solid var(--ink);border-radius:100px;overflow:hidden;background:#fff}
-.email-form input{flex:1;border:none;outline:none;padding:13px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:transparent}
+.email-form input{flex:1;border:none;outline:none;padding:13px 14px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:transparent;min-width:0}
 .email-form input::placeholder{color:#aaa9a4}
-.email-form button{background:var(--ink);color:var(--parchment);border:none;cursor:pointer;padding:0 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;border-radius:0 100px 100px 0;white-space:nowrap;transition:background .2s}
+.email-form button{background:var(--ink);color:var(--parchment);border:none;cursor:pointer;padding:0 16px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;border-radius:0 100px 100px 0;white-space:nowrap;transition:background .2s;flex-shrink:0}
 .email-form button:hover{background:#2D5C3E}
+@media(max-width:400px){
+  .email-form{border-radius:12px;flex-direction:column}
+  .email-form input{padding:12px 16px;border-radius:10px 10px 0 0}
+  .email-form button{padding:12px 16px;border-radius:0 0 10px 10px;font-size:13px}
+}
 .form-sub{font-size:12px;color:var(--muted)}
 .success-msg{display:none;background:rgba(45,122,79,.1);border:1px solid rgba(45,122,79,.3);border-radius:100px;padding:12px 22px;font-size:14px;color:#0c5e41;max-width:380px;margin:0 auto}
- 
+
 /* ABOUT */
 .about-section{border-top:1px solid var(--border);max-width:680px;margin:0 auto;padding:52px 24px}
 .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;margin-top:32px}
 .about-num{font-family:'Playfair Display',serif;font-size:40px;color:var(--honey);line-height:1;margin-bottom:7px}
 .about-label{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px}
 .about-desc{font-size:12px;color:var(--muted);line-height:1.6}
- 
+
 /* BOTTOM CTA */
 .bottom-cta{background:var(--ink);padding:60px 32px;text-align:center}
 .bottom-cta h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);color:var(--parchment);margin-bottom:10px;letter-spacing:-.5px;line-height:1.15}
@@ -126,16 +131,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .bottom-form button{background:var(--parchment);color:var(--ink);border:none;cursor:pointer;padding:0 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;border-radius:0 100px 100px 0;white-space:nowrap}
 .bottom-form button:hover{background:var(--sage)}
 .bottom-success{display:none;border-radius:100px;padding:12px 22px;font-size:14px;text-align:center;max-width:400px;margin:0 auto;background:rgba(245,240,232,.15);border:1px solid rgba(245,240,232,.35);color:#fff}
- 
+
 footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:680px;margin:0 auto}
 .footer-logo{font-family:'Playfair Display',serif;font-size:15px;color:var(--ink)}
 .footer-note{font-size:11px;color:var(--muted)}
- 
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .hero h1{animation:fadeUp .55s ease both}
 .hero-sub{animation:fadeUp .55s .1s ease both}
 .lesson-card{animation:fadeUp .55s .2s ease both}
- 
+
 @media(max-width:600px){
   nav{padding:14px 20px}
   .hero,.lesson-wrap,.about-section{padding-left:20px;padding-right:20px}
@@ -148,7 +153,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 </style>
 </head>
 <body>
- 
+
 <nav>
   <a class="nav-logo" href="#">
     <div class="nav-mark">י</div>
@@ -156,16 +161,16 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   </a>
   <a class="nav-cta" href="#bottom-cta">Get free lessons</a>
 </nav>
- 
+
 <section class="hero">
   <div class="hero-eyebrow">Free lesson · No signup needed</div>
   <h1>Finally <em>know</em><br>your Judaism.</h1>
   <p class="hero-sub">Try a real Yodea lesson right now — <strong>no email required.</strong> If you like it, get a new one every day.</p>
 </section>
- 
+
 <section class="lesson-wrap">
   <p class="lesson-label">Your free lesson — The Shofar</p>
- 
+
   <div class="lesson-card">
     <div class="lesson-topbar">
       <span class="lesson-topic">Jewish Holidays · Rosh Hashanah</span>
@@ -174,7 +179,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
         <span class="lesson-progress-text" id="progress-text">0 of 3</span>
       </div>
     </div>
- 
+
     <!-- STEP 1 — Question -->
     <div class="lesson-step active" id="step1">
       <p class="lesson-step-label">Question 1 of 3</p>
@@ -191,7 +196,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 </div>
     </div>
     <div class="lesson-nav" id="nav1"><button class="next-btn" onclick="goToStep(2)">Next →</button></div>
- 
+
     <!-- STEP 2 — Question -->
     <div class="lesson-step" id="step2">
       <p class="lesson-step-label">Question 2 of 3</p>
@@ -208,7 +213,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 </div>
     </div>
     <div class="lesson-nav" id="nav2"><button class="next-btn" onclick="goToStep(3)">Next →</button></div>
- 
+
     <!-- STEP 3 — Question -->
     <div class="lesson-step" id="step3">
       <p class="lesson-step-label">Question 3 of 3</p>
@@ -225,7 +230,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 </div>
     </div>
     <div class="lesson-nav" id="nav3"><button class="next-btn" onclick="showGate()">Get more lessons →</button></div>
- 
+
     <!-- SIGNUP GATE -->
     <div class="signup-gate" id="signup-gate">
       
@@ -238,20 +243,20 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
         </div>
         <div id="score-breakdown" style="font-size:13px;color:var(--muted);margin-bottom:16px"></div>
       </div>
- 
+
       <p class="gate-title">Save your score & keep learning.</p>
       <p class="gate-sub">Get a new Jewish lesson every day — holidays, prayers, history. 5 minutes. No guilt. Free.</p>
       <div class="email-form" id="gate-form">
         <input type="email" id="gate-email" placeholder="your@email.com"/>
-        <button onclick="submitGate()" style="font-size:12px;padding:0 14px">Save score →</button>
+        <button onclick="submitGate()">Save score →</button>
       </div>
       <div class="success-msg" id="gate-success">Score saved! Check your inbox — your personalised score report is on its way.</div>
       <p class="form-sub" style="margin-top:10px">No spam, ever · Unsubscribe anytime</p>
     </div>
- 
+
   </div>
 </section>
- 
+
 <section class="about-section">
   <p style="font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,34px);letter-spacing:-.5px;line-height:1.2;margin-bottom:6px">4,000 years of Jewish wisdom.<br>5 minutes of your morning.</p>
   <p style="font-size:15px;color:var(--muted);font-weight:300">Yodea gets you there.</p>
@@ -273,7 +278,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
     </div>
   </div>
 </section>
- 
+
 <section class="bottom-cta" id="bottom-cta">
   <h2>Get your free Jewish lesson.<br>Know your Judaism. Finally.</h2>
   <p>A new lesson every day. 5 minutes. No guilt. Free.</p>
@@ -284,25 +289,25 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   <div class="bottom-success" id="bottom-success">You're in! Check your inbox — your first lesson is on its way.</div>
   <p style="font-size:11px;color:rgba(245,240,232,.4);margin-top:14px">Free forever · Unsubscribe anytime</p>
 </section>
- 
+
 <footer>
   <span class="footer-logo">Yodea™</span>
   <span class="footer-note">Know your Judaism. · yodea.app · © 2026</span>
 </footer>
- 
+
 <script>
 var currentStep = 1;
 var answered = [false, false, false];
 var correctAnswers = [false, false, false];
- 
+
 function answer(el, correct) {
   var stepNum = currentStep;
   if (answered[stepNum-1]) return;
   answered[stepNum-1] = true;
- 
+
   var choices = el.parentElement.querySelectorAll('.choice');
   choices.forEach(function(c) { c.style.pointerEvents = 'none'; });
- 
+
   if (correct) {
     el.classList.add('correct');
     correctAnswers[stepNum-1] = true;
@@ -314,24 +319,24 @@ function answer(el, correct) {
       }
     });
   }
- 
+
   var exp = document.getElementById('exp' + stepNum);
   exp.classList.add('show');
   exp.classList.add(correct ? 'show-correct' : 'show-wrong');
- 
+
   var nav = document.getElementById('nav' + stepNum);
   nav.classList.add('show');
- 
+
   // Update progress
   var done = answered.filter(Boolean).length;
   document.getElementById('progress-fill').style.width = (done/3*100) + '%';
   document.getElementById('progress-text').textContent = done + ' of 3';
- 
+
   setTimeout(function(){
     nav.scrollIntoView({behavior:'smooth', block:'nearest'});
   }, 300);
 }
- 
+
 function goToStep(n) {
   document.getElementById('step' + (n-1)).classList.remove('active');
   document.getElementById('nav' + (n-1)).classList.remove('show');
@@ -342,15 +347,15 @@ function goToStep(n) {
     nextStep.scrollIntoView({behavior:'smooth', block:'nearest'});
   }, 100);
 }
- 
+
 function showGate() {
   document.getElementById('step3').classList.remove('active');
   document.getElementById('nav3').classList.remove('show');
- 
+
   // Calculate score
   var numCorrect = correctAnswers.filter(Boolean).length;
   var score = numCorrect * 250 + (numCorrect === 3 ? 250 : 0); // bonus for perfect
- 
+
   var labels = {
     0: 'Just getting started 🌱',
     250: 'Not bad at all 📖',
@@ -358,7 +363,7 @@ function showGate() {
     750: 'Impressive — shofar fan? 🎺',
     1000: 'Perfect score! Yodea legend 🌟'
   };
- 
+
   var breakdown = {
     0: 'Keep going — every expert started here.',
     250: '1 out of 3 correct. Room to grow!',
@@ -366,7 +371,7 @@ function showGate() {
     750: '2 out of 3 correct. Bonus points for style.',
     1000: '3 out of 3 correct. Flawless.'
   };
- 
+
   // Animate score counting up
   var scoreEl = document.getElementById('score-number');
   var labelEl = document.getElementById('score-label');
@@ -374,7 +379,7 @@ function showGate() {
   
   labelEl.textContent = labels[score] || labels[750];
   breakEl.textContent = breakdown[score] || breakdown[750];
- 
+
   var current = 0;
   var increment = score / 30;
   var timer = setInterval(function(){
@@ -382,7 +387,7 @@ function showGate() {
     scoreEl.textContent = Math.round(current);
     if (current >= score) clearInterval(timer);
   }, 30);
- 
+
   var gate = document.getElementById('signup-gate');
   gate.classList.add('show');
   document.getElementById('progress-fill').style.width = '100%';
@@ -391,7 +396,7 @@ function showGate() {
     gate.scrollIntoView({behavior:'smooth', block:'nearest'});
   }, 100);
 }
- 
+
 function submitGate() {
   var email = document.getElementById('gate-email').value.trim();
   if (!email || !email.includes('@')) {
@@ -407,7 +412,7 @@ function submitGate() {
   successEl.style.display = 'block';
   sendToBeehiiv(email);
 }
- 
+
 function submitBottom() {
   var email = document.getElementById('bottom-email').value.trim();
   if (!email || !email.includes('@')) {
@@ -419,7 +424,7 @@ function submitBottom() {
   document.getElementById('bottom-success').style.display = 'block';
   sendToBeehiiv(email);
 }
- 
+
 function sendToBeehiiv(email) {
   var numCorrect = correctAnswers.filter(Boolean).length;
   var score = numCorrect * 250 + (numCorrect === 3 ? 250 : 0);
