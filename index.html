@@ -3,687 +3,430 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yodea — Know your Judaism. | yodea.io</title>
-<!-- SEO -->
-<meta name="description" content="Get a free Jewish lesson right now. Then one every day — 5 minutes, no guilt, no jargon. Just the stuff you've always meant to know.">
+<title>Yodea — Know your Judaism. | yodea.app</title>
+<meta name="description" content="Yodea teaches you Judaism in 5 minutes a day. No Hebrew school guilt. No jargon. Just the stuff you've always meant to learn.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://yodea.app">
-<!-- Open Graph -->
 <meta property="og:title" content="Yodea — Know your Judaism.">
 <meta property="og:description" content="Finally know your Judaism. Learn in 5 minutes a day.">
 <meta property="og:url" content="https://yodea.app">
 <meta property="og:type" content="website">
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Yodea — Know your Judaism.">
 <meta name="twitter:description" content="Finally know your Judaism. Learn in 5 minutes a day.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #1A3A2A;
-    --parchment: #F5F0E8;
-    --parchment-dark: #E8E3D8;
-    --pomegranate: #2D7A4F;
-    --pomegranate-dark: #1D5C3A;
-    --olive: #1D9E75;
-    --honey: #EF9F27;
-    --text-muted: #7A7870;
-    --border: rgba(44,44,42,0.12);
-  }
+:root {
+  --ink: #1A3A2A;
+  --parchment: #F5F0E8;
+  --parchment-dark: #E8E3D8;
+  --green: #2D7A4F;
+  --honey: #C4973A;
+  --sage: #B8D4C0;
+  --muted: #7A7870;
+  --border: rgba(26,58,42,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--parchment);color:var(--ink);-webkit-font-smoothing:antialiased}
  
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);background:var(--parchment);position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-mark{width:34px;height:34px;background:var(--ink);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;color:var(--parchment);flex-shrink:0}
+.nav-word{font-family:'Playfair Display',serif;font-size:19px;color:var(--ink);letter-spacing:-.3px}
+.nav-cta{background:var(--ink);color:var(--parchment);font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:#2D5C3E}
  
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--parchment);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  /* Subtle parchment texture */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: .4;
-  }
+/* HERO */
+.hero{max-width:680px;margin:0 auto;padding:52px 24px 40px;text-align:center}
+.hero-eyebrow{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(45,122,79,.3);padding:4px 13px;border-radius:100px;margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5.5vw,58px);line-height:1.08;letter-spacing:-1.5px;color:var(--ink);margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero-sub{font-size:17px;line-height:1.65;color:var(--muted);max-width:480px;margin:0 auto 12px;font-weight:300}
+.hero-sub strong{font-weight:500;color:var(--ink)}
  
-  /* NAV */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    border-bottom: 1px solid var(--border);
-    background: var(--parchment);
-  }
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-  .nav-mark {
-    width: 36px; height: 36px;
-    background: #1A3A2A;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 18px; color: var(--parchment);
-    flex-shrink: 0;
-  }
-  .nav-word {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; color: var(--ink);
-    letter-spacing: -0.3px;
-  }
-  .nav-cta {
-    background: var(--pomegranate);
-    color: #fff;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; font-weight: 500;
-    padding: 9px 20px;
-    border-radius: 100px;
-    border: none; cursor: pointer;
-    text-decoration: none;
-    transition: background .2s;
-  }
-  .nav-cta:hover { background: var(--pomegranate-dark); }
+/* LESSON CARD */
+.lesson-wrap{max-width:680px;margin:0 auto;padding:0 24px 48px}
+.lesson-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;text-align:center}
  
-  /* HERO */
-  .hero {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 48px 24px 40px;
-    text-align: center;
-  }
-  .hero-eyebrow {
-    display: inline-block;
-    font-size: 12px; font-weight: 500;
-    letter-spacing: .1em; text-transform: uppercase;
-    color: var(--pomegranate);
-    border: 1px solid rgba(216,90,48,.3);
-    padding: 4px 14px; border-radius: 100px;
-    margin-bottom: 28px;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 6vw, 68px);
-    line-height: 1.08;
-    letter-spacing: -1.5px;
-    color: var(--ink);
-    margin-bottom: 24px;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--pomegranate);
-  }
-  .hero-sub {
-    font-size: 18px; line-height: 1.65;
-    color: var(--text-muted);
-    max-width: 520px; margin: 0 auto 40px;
-    font-weight: 300;
-  }
+.lesson-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(26,58,42,0.08)}
+.lesson-topbar{background:var(--ink);padding:13px 20px;display:flex;align-items:center;justify-content:space-between}
+.lesson-topic{font-size:11px;font-weight:500;color:rgba(245,240,232,.55);text-transform:uppercase;letter-spacing:.08em}
+.lesson-progress-wrap{display:flex;align-items:center;gap:8px}
+.lesson-progress{width:80px;height:3px;background:rgba(245,240,232,.2);border-radius:2px;overflow:hidden}
+.lesson-progress-fill{height:100%;border-radius:2px;background:var(--honey)}
+.lesson-progress-text{font-size:11px;color:rgba(245,240,232,.45)}
  
-  /* EMAIL FORM */
-  .email-form {
-    display: flex; gap: 0;
-    max-width: 440px; margin: 0 auto 16px;
-    border: 1.5px solid var(--ink);
-    border-radius: 100px;
-    overflow: hidden;
-    background: #fff;
-  }
-  .email-form input {
-    flex: 1;
-    border: none; outline: none;
-    padding: 14px 20px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px; color: var(--ink);
-    background: transparent;
-  }
-  .email-form input::placeholder { color: #9A9890; }
-  .email-form button {
-    background: var(--ink);
-    color: var(--parchment);
-    border: none; cursor: pointer;
-    padding: 0 24px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; font-weight: 500;
-    border-radius: 0 100px 100px 0;
-    white-space: nowrap;
-    transition: background .2s;
-  }
-  .email-form button:hover { background: #444441; }
-  .form-sub {
-    font-size: 12px; color: var(--text-muted);
-    text-align: center;
-  }
+/* LESSON STEPS */
+.lesson-step{padding:28px 28px;border-bottom:1px solid var(--parchment-dark);display:none}
+.lesson-step.active{display:block}
+.lesson-step-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+.lesson-question{font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,22px);line-height:1.3;color:var(--ink);margin-bottom:20px}
+.lesson-fact{font-size:15px;line-height:1.8;color:var(--ink);margin-bottom:0}
+.lesson-fact p{margin-bottom:12px}
+.lesson-fact p:last-child{margin-bottom:0}
+.lesson-fact strong{font-weight:500;color:var(--ink)}
+.lesson-fact em{font-style:italic;color:var(--green)}
  
-  /* SOCIAL PROOF ROW */
-  .proof-row {
-    display: flex; align-items: center; justify-content: center;
-    gap: 24px; margin-top: 44px;
-    flex-wrap: wrap;
-  }
-  .proof-item {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 13px; color: var(--text-muted);
-  }
-  .proof-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--parchment-dark);
-  }
+/* CHOICES */
+.choices{display:flex;flex-direction:column;gap:8px;margin-bottom:0}
+.choice{border:1.5px solid var(--border);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px;user-select:none;background:#fff}
+.choice:hover{border-color:rgba(26,58,42,.3);background:#fafaf8}
+.choice.correct{border-color:var(--green);background:rgba(45,122,79,.06);color:#0c5e41}
+.choice.correct .choice-letter{background:var(--green);color:#fff}
+.choice.wrong{border-color:#f09595;background:#fff8f6;color:#a32d2d}
+.choice-letter{width:26px;height:26px;border-radius:50%;background:var(--parchment-dark);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;color:var(--muted)}
  
-  /* DIVIDER TEXT */
-  .section-divider {
-    display: flex; align-items: center; gap: 16px;
-    max-width: 780px; margin: 0 auto;
-    padding: 0 40px;
-  }
-  .section-divider hr {
-    flex: 1; border: none;
-    border-top: 1px solid var(--border);
-  }
-  .section-divider span {
-    font-size: 12px; color: var(--text-muted);
-    white-space: nowrap; letter-spacing: .05em;
-    text-transform: uppercase;
-  }
+/* EXPLANATION */
+.explanation{margin-top:14px;background:rgba(45,122,79,.06);border-left:3px solid var(--green);border-radius:0 10px 10px 0;padding:12px 16px;font-size:13px;color:#0c5e41;line-height:1.7;display:none}
+.explanation.show{display:block}
+.exp-wrong{display:none}
+.exp-correct{display:none}
+.explanation.show-correct .exp-correct{display:inline}
+.explanation.show-wrong .exp-wrong{display:inline}
+.explanation.show-wrong{background:rgba(122,120,112,0.08);border-left-color:#7A7870;color:#5A5850;}
+.explanation.show-correct{background:rgba(45,122,79,.06);border-left-color:#2D7A4F;color:#0c5e41;}
  
-  /* LESSON PREVIEW */
-  .lesson-section {
-    max-width: 780px; margin: 0 auto;
-    padding: 60px 40px;
-  }
-  .lesson-label {
-    font-size: 11px; font-weight: 500;
-    text-transform: uppercase; letter-spacing: .1em;
-    color: var(--text-muted); margin-bottom: 28px;
-    text-align: center;
-  }
-  .lesson-card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .lesson-top-bar {
-    background: var(--ink);
-    padding: 14px 20px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .lesson-topic {
-    font-size: 12px; font-weight: 500;
-    color: rgba(241,239,232,.6);
-    text-transform: uppercase; letter-spacing: .08em;
-  }
-  .lesson-progress-wrap {
-    display: flex; align-items: center; gap: 10px;
-  }
-  .lesson-progress-bar {
-    width: 80px; height: 4px;
-    background: rgba(241,239,232,.2);
-    border-radius: 2px; overflow: hidden;
-  }
-  .lesson-progress-fill {
-    width: 40%; height: 100%;
-    background: var(--pomegranate);
-    border-radius: 2px;
-  }
-  .lesson-progress-text {
-    font-size: 11px; color: rgba(241,239,232,.5);
-  }
-  .lesson-body { padding: 28px 24px; }
-  .lesson-q-label {
-    font-size: 11px; font-weight: 500;
-    text-transform: uppercase; letter-spacing: .08em;
-    color: var(--text-muted); margin-bottom: 10px;
-  }
-  .lesson-question {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; line-height: 1.3;
-    color: var(--ink); margin-bottom: 22px;
-  }
-  .lesson-choices { display: flex; flex-direction: column; gap: 8px; }
-  .choice {
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    padding: 13px 16px;
-    font-size: 14px; color: var(--ink);
-    cursor: pointer; transition: border-color .15s, background .15s;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .choice:hover { border-color: rgba(44,44,42,.3); background: #fafaf8; }
-  .choice.correct {
-    border-color: var(--olive);
-    background: rgba(29,158,117,.06);
-    color: #0c5e41;
-  }
-  .choice.correct .choice-letter { background: var(--olive); color: #fff; }
-  .choice-letter {
-    width: 26px; height: 26px; border-radius: 50%;
-    background: var(--parchment-dark);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 500; flex-shrink: 0;
-    margin-right: 12px; color: var(--text-muted);
-  }
-  .choice-text { flex: 1; }
-  .lesson-explanation {
-    margin-top: 16px;
-    background: rgba(29,158,117,.08);
-    border-left: 3px solid var(--olive);
-    border-radius: 0 10px 10px 0;
-    padding: 12px 16px;
-    font-size: 13px; color: #0c5e41; line-height: 1.6;
-  }
+/* NEXT BUTTON */
+.lesson-nav{padding:16px 28px;display:flex;justify-content:flex-end;display:none}
+.lesson-nav.show{display:flex}
+.next-btn{background:var(--ink);color:var(--parchment);border:none;padding:10px 24px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background .2s}
+.next-btn:hover{background:#2D5C3E}
  
-  /* ABOUT SECTION */
-  .about-section {
-    border-top: 1px solid var(--border);
-    max-width: 780px; margin: 0 auto;
-    padding: 60px 40px;
-  }
-  .about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px; margin-top: 40px;
-  }
-  .about-item {}
-  .about-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px; color: var(--pomegranate);
-    line-height: 1; margin-bottom: 8px;
-  }
-  .about-label {
-    font-size: 15px; font-weight: 500;
-    color: var(--ink); margin-bottom: 6px;
-  }
-  .about-desc {
-    font-size: 13px; color: var(--text-muted); line-height: 1.6;
-  }
+/* SIGNUP GATE */
+.signup-gate{padding:28px;text-align:center;background:var(--parchment);display:none}
+.signup-gate.show{display:block}
+.gate-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--ink);margin-bottom:8px;letter-spacing:-.3px}
+.gate-sub{font-size:15px;color:var(--muted);margin-bottom:24px;line-height:1.6;font-weight:300}
+.email-form{display:flex;max-width:380px;margin:0 auto 10px;border:1.5px solid var(--ink);border-radius:100px;overflow:hidden;background:#fff}
+.email-form input{flex:1;border:none;outline:none;padding:13px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:transparent}
+.email-form input::placeholder{color:#aaa9a4}
+.email-form button{background:var(--ink);color:var(--parchment);border:none;cursor:pointer;padding:0 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;border-radius:0 100px 100px 0;white-space:nowrap;transition:background .2s}
+.email-form button:hover{background:#2D5C3E}
+.form-sub{font-size:12px;color:var(--muted)}
+.success-msg{display:none;background:rgba(45,122,79,.1);border:1px solid rgba(45,122,79,.3);border-radius:100px;padding:12px 22px;font-size:14px;color:#0c5e41;max-width:380px;margin:0 auto}
  
-  /* HOW IT WORKS */
-  .how-section {
-    background: var(--ink);
-    padding: 70px 40px;
-    text-align: center;
-  }
-  .how-inner { max-width: 780px; margin: 0 auto; }
-  .how-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 40px);
-    color: var(--parchment); margin-bottom: 12px;
-    letter-spacing: -0.5px;
-  }
-  .how-sub {
-    font-size: 16px; color: rgba(241,239,232,.55);
-    margin-bottom: 48px; font-weight: 300;
-  }
-  .how-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2px;
-  }
-  .how-item {
-    background: rgba(241,239,232,.05);
-    padding: 28px 24px; text-align: left;
-  }
-  .how-item:first-child { border-radius: 16px 0 0 16px; }
-  .how-item:last-child { border-radius: 0 16px 16px 0; }
-  .how-step {
-    font-size: 11px; font-weight: 500;
-    text-transform: uppercase; letter-spacing: .1em;
-    color: var(--pomegranate); margin-bottom: 12px;
-  }
-  .how-item-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; color: var(--parchment);
-    margin-bottom: 8px; line-height: 1.2;
-  }
-  .how-item-desc {
-    font-size: 13px; color: rgba(241,239,232,.5); line-height: 1.6;
-  }
+/* ABOUT */
+.about-section{border-top:1px solid var(--border);max-width:680px;margin:0 auto;padding:52px 24px}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;margin-top:32px}
+.about-num{font-family:'Playfair Display',serif;font-size:40px;color:var(--honey);line-height:1;margin-bottom:7px}
+.about-label{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.about-desc{font-size:12px;color:var(--muted);line-height:1.6}
  
-  /* TESTIMONIAL */
-  .testimonial-section {
-    max-width: 780px; margin: 0 auto;
-    padding: 70px 40px;
-  }
-  .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 16px;
-  }
-  .testimonial-card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 16px; padding: 20px;
-  }
-  .testimonial-text {
-    font-size: 14px; line-height: 1.65;
-    color: var(--ink); margin-bottom: 16px;
-    font-style: italic;
-  }
-  .testimonial-author {
-    display: flex; align-items: center; gap: 10px;
-  }
-  .author-avatar {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: var(--parchment-dark);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 500; color: var(--text-muted);
-    flex-shrink: 0;
-  }
-  .author-name { font-size: 13px; font-weight: 500; color: var(--ink); }
-  .author-desc { font-size: 11px; color: var(--text-muted); }
+/* BOTTOM CTA */
+.bottom-cta{background:var(--ink);padding:60px 32px;text-align:center}
+.bottom-cta h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);color:var(--parchment);margin-bottom:10px;letter-spacing:-.5px;line-height:1.15}
+.bottom-cta p{font-size:15px;color:rgba(245,240,232,.65);margin-bottom:32px;font-weight:300}
+.bottom-form{display:flex;max-width:400px;margin:0 auto;border:2px solid rgba(245,240,232,.35);border-radius:100px;overflow:hidden;background:rgba(245,240,232,.1)}
+.bottom-form input{flex:1;border:none;outline:none;padding:13px 18px;background:transparent;font-family:'DM Sans',sans-serif;font-size:14px;color:#fff}
+.bottom-form input::placeholder{color:rgba(245,240,232,.45)}
+.bottom-form button{background:var(--parchment);color:var(--ink);border:none;cursor:pointer;padding:0 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;border-radius:0 100px 100px 0;white-space:nowrap}
+.bottom-form button:hover{background:var(--sage)}
+.bottom-success{display:none;border-radius:100px;padding:12px 22px;font-size:14px;text-align:center;max-width:400px;margin:0 auto;background:rgba(245,240,232,.15);border:1px solid rgba(245,240,232,.35);color:#fff}
  
-  /* BOTTOM CTA */
-  .bottom-cta {
-    background: var(--pomegranate);
-    padding: 70px 40px; text-align: center;
-  }
-  .bottom-cta h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 44px);
-    color: #fff; margin-bottom: 12px;
-    letter-spacing: -0.5px; line-height: 1.15;
-  }
-  .bottom-cta p {
-    font-size: 16px; color: rgba(255,255,255,.75);
-    margin-bottom: 36px; font-weight: 300;
-  }
-  .bottom-form {
-    display: flex; gap: 0;
-    max-width: 420px; margin: 0 auto;
-    border: 2px solid rgba(255,255,255,.4);
-    border-radius: 100px; overflow: hidden;
-    background: rgba(255,255,255,.12);
-  }
-  .bottom-form input {
-    flex: 1; border: none; outline: none;
-    padding: 14px 20px;
-    background: transparent;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px; color: #fff;
-  }
-  .bottom-form input::placeholder { color: rgba(255,255,255,.5); }
-  .bottom-form button {
-    background: #fff; color: var(--pomegranate);
-    border: none; cursor: pointer;
-    padding: 0 22px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; font-weight: 500;
-    border-radius: 0 100px 100px 0;
-    white-space: nowrap;
-    transition: background .2s;
-  }
-  .bottom-form button:hover { background: var(--parchment); }
+footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:680px;margin:0 auto}
+.footer-logo{font-family:'Playfair Display',serif;font-size:15px;color:var(--ink)}
+.footer-note{font-size:11px;color:var(--muted)}
  
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 28px 40px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 12px;
-    max-width: 780px; margin: 0 auto;
-  }
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px; color: var(--ink);
-  }
-  .footer-note { font-size: 12px; color: var(--text-muted); }
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{animation:fadeUp .55s ease both}
+.hero-sub{animation:fadeUp .55s .1s ease both}
+.lesson-card{animation:fadeUp .55s .2s ease both}
  
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero h1 { animation: fadeUp .6s ease both; }
-  .hero-sub { animation: fadeUp .6s .12s ease both; }
-  .email-form { animation: fadeUp .6s .22s ease both; }
-  .form-sub { animation: fadeUp .6s .28s ease both; }
-  .proof-row { animation: fadeUp .6s .36s ease both; }
- 
-  /* SUCCESS STATE */
-  .success-msg {
-    display: none;
-    background: rgba(29,158,117,.1);
-    border: 1px solid rgba(29,158,117,.3);
-    border-radius: 100px;
-    padding: 12px 24px;
-    font-size: 14px; color: #0c5e41;
-    text-align: center; max-width: 440px; margin: 0 auto;
-  }
- 
-  @media(max-width:600px){
-    nav { padding: 16px 20px; }
-    .hero, .lesson-section, .about-section, .testimonial-section { padding: 48px 20px; }
-    .how-section, .bottom-cta { padding: 50px 20px; }
-    footer { padding: 24px 20px; }
-    .how-item:first-child { border-radius: 16px 16px 0 0; }
-    .how-item:last-child { border-radius: 0 0 16px 16px; }
-    .email-form, .bottom-form { flex-direction: column; border-radius: 16px; }
-    .email-form input, .bottom-form input { padding: 14px 16px; }
-    .email-form button, .bottom-form button { border-radius: 0 0 14px 14px; padding: 13px; }
-  }
+@media(max-width:600px){
+  nav{padding:14px 20px}
+  .hero,.lesson-wrap,.about-section{padding-left:20px;padding-right:20px}
+  .lesson-step{padding:20px}
+  .lesson-nav{padding:12px 20px}
+  .signup-gate{padding:20px}
+  .bottom-cta{padding:48px 20px}
+  footer{padding:20px}
+}
 </style>
 </head>
 <body>
  
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
     <div class="nav-mark">י</div>
-    <span class="nav-word" style="font-family:'Playfair Display',Georgia,serif;letter-spacing:-.5px">Yodea</span>
+    <span class="nav-word">Yodea</span>
   </a>
-  <a class="nav-cta" href="#bottom-cta">Get free lesson</a>
+  <a class="nav-cta" href="#bottom-cta">Get free lessons</a>
 </nav>
  
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">Free lesson inside &nbsp;·&nbsp; yodea.app</div>
+  <div class="hero-eyebrow">Free lesson · No signup needed</div>
   <h1>Finally <em>know</em><br>your Judaism.</h1>
-  <p class="hero-sub">Get a free Jewish lesson right now. Then one every day — 5 minutes, no guilt, no jargon. Just the stuff you've always meant to know.</p>
- 
-  <div class="email-form" id="hero-form">
-    <input type="email" id="hero-email" placeholder="your@email.com" />
-    <button onclick="submit('hero')">Get my free lesson →</button>
-  </div>
-  <div class="success-msg" id="hero-success">You're in! Check your inbox — your free lesson is on its way.</div>
-  <p class="form-sub">Free lesson delivered instantly &nbsp;·&nbsp; No spam, ever</p>
- 
-  <div class="proof-row">
-    <div class="proof-item"><div class="proof-dot"></div>Free lesson on signup</div>
-    <div class="proof-item"><div class="proof-dot"></div>Holidays, prayers, history</div>
-    <div class="proof-item"><div class="proof-dot"></div>5 minutes a day</div>
-    <div class="proof-item"><div class="proof-dot"></div>No prior knowledge needed</div>
-  </div>
+  <p class="hero-sub">Try a real Yodea lesson right now — <strong>no email required.</strong> If you like it, get a new one every day.</p>
 </section>
  
-<!-- DIVIDER -->
-<div class="section-divider">
-  <hr><span>Try a lesson</span><hr>
-</div>
+<section class="lesson-wrap">
+  <p class="lesson-label">Your free lesson — The Shofar</p>
  
-<!-- LESSON PREVIEW -->
-<section class="lesson-section">
-  <p class="lesson-label">Sample lesson — Rosh Hashanah</p>
   <div class="lesson-card">
-    <div class="lesson-top-bar">
-      <span class="lesson-topic">Rosh Hashanah · lesson 1</span>
+    <div class="lesson-topbar">
+      <span class="lesson-topic">Jewish Holidays · Rosh Hashanah</span>
       <div class="lesson-progress-wrap">
-        <div class="lesson-progress-bar"><div class="lesson-progress-fill"></div></div>
-        <span class="lesson-progress-text">2 of 5</span>
+        <div class="lesson-progress"><div class="lesson-progress-fill" id="progress-fill" style="width:0%"></div></div>
+        <span class="lesson-progress-text" id="progress-text">0 of 3</span>
       </div>
     </div>
-    <div class="lesson-body">
-      <p class="lesson-q-label">Question</p>
+ 
+    <!-- STEP 1 — Question -->
+    <div class="lesson-step active" id="step1">
+      <p class="lesson-step-label">Question 1 of 3</p>
       <p class="lesson-question">The shofar is blown on Rosh Hashanah. What is it actually made from?</p>
-      <div class="lesson-choices">
-        <div class="choice" onclick="pickChoice(this, false)">
-          <span class="choice-letter">A</span>
-          <span class="choice-text">A carved wooden horn</span>
-        </div>
-        <div class="choice correct" onclick="pickChoice(this, true)">
-          <span class="choice-letter">B</span>
-          <span class="choice-text">A ram's horn</span>
-        </div>
-        <div class="choice" onclick="pickChoice(this, false)">
-          <span class="choice-letter">C</span>
-          <span class="choice-text">A type of brass instrument</span>
-        </div>
-        <div class="choice" onclick="pickChoice(this, false)">
-          <span class="choice-letter">D</span>
-          <span class="choice-text">A clay pipe</span>
-        </div>
+      <div class="choices">
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">A</span>A carved wooden horn</div>
+        <div class="choice" onclick="answer(this,true)"><span class="choice-letter">B</span>A ram's horn</div>
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">C</span>A brass instrument</div>
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">D</span>A clay pipe</div>
       </div>
-      <div class="lesson-explanation" id="explanation" style="display:none">
-        Correct. A shofar is made from a ram's horn — no mouthpiece, no keys, just breath and lip pressure. It's one of the oldest instruments in the world, and it sounds exactly like you'd expect a parking-lot trumpet from 3,000 BC to sound. That's the point. It's supposed to be raw.
-      </div>
+      <div class="explanation" id="exp1">
+  <span class="exp-correct">Correct — a shofar is made from a ram's horn. No mouthpiece, no keys, just breath and lip pressure. It's one of the oldest instruments in the world, and it sounds exactly like you'd expect a parking-lot trumpet from 3,000 BC to sound. That's entirely intentional. It's supposed to wake you up.</span>
+  <span class="exp-wrong">Not quite — it's actually a ram's horn. No mouthpiece, no keys, just breath and lip pressure. One of the oldest instruments in the world, and it sounds exactly like you'd expect a parking-lot trumpet from 3,000 BC to sound. That's entirely intentional. It's supposed to wake you up.</span>
+</div>
     </div>
+    <div class="lesson-nav" id="nav1"><button class="next-btn" onclick="goToStep(2)">Next →</button></div>
+ 
+    <!-- STEP 2 — Question -->
+    <div class="lesson-step" id="step2">
+      <p class="lesson-step-label">Question 2 of 3</p>
+      <p class="lesson-question">Why specifically a ram's horn? What story connects it to Rosh Hashanah?</p>
+      <div class="choices">
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">A</span>Rams were the most common animal in ancient Israel</div>
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">B</span>King David played one at the first Rosh Hashanah</div>
+        <div class="choice" onclick="answer(this,true)"><span class="choice-letter">C</span>The Binding of Isaac — Abraham sacrificed a ram instead of his son</div>
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">D</span>Moses used one to signal the Israelites in the desert</div>
+      </div>
+      <div class="explanation" id="exp2">
+  <span class="exp-correct">Exactly right. When God stopped Abraham from sacrificing Isaac, a ram caught in a thicket was sacrificed instead. The shofar recalls that moment — a sound of both relief and awe. Every time you hear it on Rosh Hashanah, that's the story it's telling.</span>
+  <span class="exp-wrong">Good guess — but it's actually the Binding of Isaac. When God stopped Abraham from sacrificing his son, a ram caught in a thicket was sacrificed instead. The shofar recalls that moment — a sound of both relief and awe. Every time you hear it on Rosh Hashanah, that's the story it's telling.</span>
+</div>
+    </div>
+    <div class="lesson-nav" id="nav2"><button class="next-btn" onclick="goToStep(3)">Next →</button></div>
+ 
+    <!-- STEP 3 — Question -->
+    <div class="lesson-step" id="step3">
+      <p class="lesson-step-label">Question 3 of 3</p>
+      <p class="lesson-question">How many distinct calls are blown on the shofar during services?</p>
+      <div class="choices">
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">A</span>One — a single long blast</div>
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">B</span>Two — one at the start, one at the end</div>
+        <div class="choice" onclick="answer(this,false)"><span class="choice-letter">C</span>Three — Tekiah, Shevarim, Teruah</div>
+        <div class="choice" onclick="answer(this,true)"><span class="choice-letter">D</span>Four — Tekiah, Shevarim, Teruah, and Tekiah Gedolah</div>
+      </div>
+      <div class="explanation" id="exp3">
+  <span class="exp-correct">Exactly — four calls: Tekiah (one long blast), Shevarim (three medium blasts), Teruah (nine short staccato blasts), and Tekiah Gedolah — one very long blast, held as long as humanly possible. The Ba'al Tekiah (shofar blower) practices for weeks. And still sometimes cracks the note. Which is honestly kind of beautiful.</span>
+  <span class="exp-wrong">Close — there are actually four: Tekiah (one long blast), Shevarim (three medium blasts), Teruah (nine short staccato blasts), and Tekiah Gedolah — one very long blast, held as long as humanly possible. The Ba'al Tekiah (shofar blower) practices for weeks. And still sometimes cracks the note. Which is honestly kind of beautiful.</span>
+</div>
+    </div>
+    <div class="lesson-nav" id="nav3"><button class="next-btn" onclick="showGate()">Get more lessons →</button></div>
+ 
+    <!-- SIGNUP GATE -->
+    <div class="signup-gate" id="signup-gate">
+      
+      <!-- Score display -->
+      <div id="score-display" style="margin-bottom:20px">
+        <div style="display:inline-flex;flex-direction:column;align-items:center;background:var(--ink);border-radius:16px;padding:20px 36px;margin-bottom:12px">
+          <span style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--sage);margin-bottom:4px">Your Yodea Score</span>
+          <span id="score-number" style="font-family:'Playfair Display',serif;font-size:52px;color:#fff;line-height:1;font-weight:400">0</span>
+          <span id="score-label" style="font-size:13px;color:var(--sage);margin-top:4px">—</span>
+        </div>
+        <div id="score-breakdown" style="font-size:13px;color:var(--muted);margin-bottom:16px"></div>
+      </div>
+ 
+      <p class="gate-title">Save your score & keep learning.</p>
+      <p class="gate-sub">Get a new Jewish lesson every day — holidays, prayers, history. 5 minutes. No guilt. Free.</p>
+      <div class="email-form" id="gate-form">
+        <input type="email" id="gate-email" placeholder="your@email.com"/>
+        <button onclick="submitGate()">Save my score</button>
+      </div>
+      <div class="success-msg" id="gate-success">Score saved! Check your inbox — your personalised score report is on its way.</div>
+      <p class="form-sub" style="margin-top:10px">No spam, ever · Unsubscribe anytime</p>
+    </div>
+ 
   </div>
 </section>
  
-<!-- ABOUT / STATS -->
 <section class="about-section">
-  <p style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);letter-spacing:-.5px;line-height:1.2;margin-bottom:8px">4,000 years of Jewish wisdom.<br>5 minutes of your morning.</p>
-  <p style="font-size:16px;color:var(--text-muted);font-weight:300">Yodea gets you to the point.</p>
+  <p style="font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,34px);letter-spacing:-.5px;line-height:1.2;margin-bottom:6px">4,000 years of Jewish wisdom.<br>5 minutes of your morning.</p>
+  <p style="font-size:15px;color:var(--muted);font-weight:300">Yodea gets you there.</p>
   <div class="about-grid">
-    <div class="about-item">
+    <div>
       <p class="about-num">5</p>
       <p class="about-label">Minutes per day</p>
-      <p class="about-desc">Each lesson is designed for a commute, a coffee break, or that moment before bed when you'd otherwise scroll Instagram.</p>
+      <p class="about-desc">Each lesson fits a commute, a coffee break, or that moment before bed.</p>
     </div>
-    <div class="about-item">
+    <div>
       <p class="about-num">30+</p>
-      <p class="about-label">Topics covered at launch</p>
-      <p class="about-desc">Holidays, prayers, history, Hebrew basics, lifecycle events — the full picture, explained without the condescension.</p>
+      <p class="about-label">Topics at launch</p>
+      <p class="about-desc">Holidays, prayers, history, Hebrew basics — explained without condescension.</p>
     </div>
-    <div class="about-item">
+    <div>
       <p class="about-num">0</p>
       <p class="about-label">Hebrew school required</p>
-      <p class="about-desc">Whether you had a Bar Mitzvah or can't spell "menorah," Yodea starts wherever you are.</p>
+      <p class="about-desc">Whether you had a Bar Mitzvah or can't spell "menorah" — start wherever you are.</p>
     </div>
   </div>
 </section>
  
-<!-- HOW IT WORKS -->
-<section class="how-section">
-  <div class="how-inner">
-    <h2 class="how-title">How it works</h2>
-    <p class="how-sub">Here's how Yodea works.</p>
-    <div class="how-grid">
-      <div class="how-item">
-        <p class="how-step">Step 01</p>
-        <p class="how-item-title">Pick a topic</p>
-        <p class="how-item-desc">Holidays, prayers, Jewish history, or Hebrew basics. Start wherever you're most curious.</p>
-      </div>
-      <div class="how-item">
-        <p class="how-step">Step 02</p>
-        <p class="how-item-title">5-minute lesson</p>
-        <p class="how-item-desc">Short questions, clear explanations, one "huh, I didn't know that" moment per lesson. Guaranteed.</p>
-      </div>
-      <div class="how-item">
-        <p class="how-step">Step 03</p>
-        <p class="how-item-title">Build a streak</p>
-        <p class="how-item-desc">Come back tomorrow. And the day after. Judaism is a daily practice — Yodea makes it one too.</p>
-      </div>
-      <div class="how-item">
-        <p class="how-step">Step 04</p>
-        <p class="how-item-title">Actually know stuff</p>
-        <p class="how-item-desc">Show up to Passover this year knowing what the four questions actually mean. Your family will be shocked.</p>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- TESTIMONIALS (placeholder quotes from target persona) -->
-<section class="testimonial-section">
-  <p style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);text-align:center;margin-bottom:28px">What people like you are saying they need</p>
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <p class="testimonial-text">"I sat through an entire Yom Kippur service nodding along and understood maybe 15% of it. I need this."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">RS</div>
-        <div><p class="author-name">Rachel S.</p><p class="author-desc">Reform Jew, Chicago</p></div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-text">"My kids ask me why we do things on holidays and I just say 'it's tradition' because I genuinely don't know. Embarrassing."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">DL</div>
-        <div><p class="author-name">David L.</p><p class="author-desc">Jewish dad, New York</p></div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-text">"I identify as Jewish but I couldn't tell you the difference between Shavuot and Sukkot. That bothers me more than I admit."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">MG</div>
-        <div><p class="author-name">Maya G.</p><p class="author-desc">Cultural Jew, LA</p></div>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- BOTTOM CTA -->
 <section class="bottom-cta" id="bottom-cta">
   <h2>Get your free Jewish lesson.<br>Know your Judaism. Finally.</h2>
-  <p>Enter your email and get a free Jewish lesson instantly — then one every day.</p>
+  <p>A new lesson every day. 5 minutes. No guilt. Free.</p>
   <div class="bottom-form" id="bottom-form">
-    <input type="email" id="bottom-email" placeholder="your@email.com" />
-    <button onclick="submit('bottom')">Get my free lesson →</button>
+    <input type="email" id="bottom-email" placeholder="your@email.com"/>
+    <button onclick="submitBottom()">Get daily lessons</button>
   </div>
-  <div class="success-msg" id="bottom-success" style="border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.15)">You're in! Check your inbox — your free lesson is on its way.</div>
-  <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:14px">Free early access. Unsubscribe anytime.</p>
+  <div class="bottom-success" id="bottom-success">You're in! Check your inbox — your first lesson is on its way.</div>
+  <p style="font-size:11px;color:rgba(245,240,232,.4);margin-top:14px">Free forever · Unsubscribe anytime</p>
 </section>
  
-<!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Yodea</span>
-  <span class="footer-note">Know your Judaism. &nbsp;·&nbsp; yodea.io &nbsp;·&nbsp; © 2026</span>
+  <span class="footer-logo">Yodea™</span>
+  <span class="footer-note">Know your Judaism. · yodea.app · © 2026</span>
 </footer>
  
 <script>
-function pickChoice(el, correct) {
-  document.querySelectorAll('.choice').forEach(function(c) {
-    c.style.pointerEvents = 'none';
-  });
-  if (!correct) {
-    el.style.background = '#fff8f6';
-    el.style.borderColor = '#f09595';
-    el.style.color = '#a32d2d';
+var currentStep = 1;
+var answered = [false, false, false];
+var correctAnswers = [false, false, false];
+ 
+function answer(el, correct) {
+  var stepNum = currentStep;
+  if (answered[stepNum-1]) return;
+  answered[stepNum-1] = true;
+ 
+  var choices = el.parentElement.querySelectorAll('.choice');
+  choices.forEach(function(c) { c.style.pointerEvents = 'none'; });
+ 
+  if (correct) {
+    el.classList.add('correct');
+    correctAnswers[stepNum-1] = true;
+  } else {
+    el.classList.add('wrong');
+    choices.forEach(function(c) {
+      if (c.getAttribute('onclick') && c.getAttribute('onclick').includes('true')) {
+        c.classList.add('correct');
+      }
+    });
   }
-  document.getElementById('explanation').style.display = 'block';
-  document.querySelector('.choice.correct').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+ 
+  var exp = document.getElementById('exp' + stepNum);
+  exp.classList.add('show');
+  exp.classList.add(correct ? 'show-correct' : 'show-wrong');
+ 
+  var nav = document.getElementById('nav' + stepNum);
+  nav.classList.add('show');
+ 
+  // Update progress
+  var done = answered.filter(Boolean).length;
+  document.getElementById('progress-fill').style.width = (done/3*100) + '%';
+  document.getElementById('progress-text').textContent = done + ' of 3';
+ 
+  setTimeout(function(){
+    nav.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }, 300);
 }
  
-function submit(section) {
-  var input   = document.getElementById(section + '-email');
-  var form    = document.getElementById(section + '-form');
-  var success = document.getElementById(section + '-success');
-  var email   = input.value.trim();
+function goToStep(n) {
+  document.getElementById('step' + (n-1)).classList.remove('active');
+  document.getElementById('nav' + (n-1)).classList.remove('show');
+  currentStep = n;
+  var nextStep = document.getElementById('step' + n);
+  nextStep.classList.add('active');
+  setTimeout(function(){
+    nextStep.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }, 100);
+}
  
-  // Basic validation
+function showGate() {
+  document.getElementById('step3').classList.remove('active');
+  document.getElementById('nav3').classList.remove('show');
+ 
+  // Calculate score
+  var numCorrect = correctAnswers.filter(Boolean).length;
+  var score = numCorrect * 250 + (numCorrect === 3 ? 250 : 0); // bonus for perfect
+ 
+  var labels = {
+    0: 'Just getting started 🌱',
+    250: 'Not bad at all 📖',
+    500: 'Solid Jewish knowledge 🕎',
+    750: 'Impressive — shofar fan? 🎺',
+    1000: 'Perfect score! Yodea legend 🌟'
+  };
+ 
+  var breakdown = {
+    0: 'Keep going — every expert started here.',
+    250: '1 out of 3 correct. Room to grow!',
+    500: '2 out of 3 correct. You know your stuff.',
+    750: '2 out of 3 correct. Bonus points for style.',
+    1000: '3 out of 3 correct. Flawless.'
+  };
+ 
+  // Animate score counting up
+  var scoreEl = document.getElementById('score-number');
+  var labelEl = document.getElementById('score-label');
+  var breakEl = document.getElementById('score-breakdown');
+  
+  labelEl.textContent = labels[score] || labels[750];
+  breakEl.textContent = breakdown[score] || breakdown[750];
+ 
+  var current = 0;
+  var increment = score / 30;
+  var timer = setInterval(function(){
+    current = Math.min(current + increment, score);
+    scoreEl.textContent = Math.round(current);
+    if (current >= score) clearInterval(timer);
+  }, 30);
+ 
+  var gate = document.getElementById('signup-gate');
+  gate.classList.add('show');
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-text').textContent = '3 of 3';
+  setTimeout(function(){
+    gate.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }, 100);
+}
+ 
+function submitGate() {
+  var email = document.getElementById('gate-email').value.trim();
   if (!email || !email.includes('@')) {
-    input.style.outline = '2px solid #2D7A4F';
-    input.focus();
+    document.getElementById('gate-email').style.outline = '2px solid #C4973A';
+    document.getElementById('gate-email').focus();
     return;
   }
+  var numCorrect = correctAnswers.filter(Boolean).length;
+  var score = numCorrect * 250 + (numCorrect === 3 ? 250 : 0);
+  document.getElementById('gate-form').style.display = 'none';
+  var successEl = document.getElementById('gate-success');
+  successEl.textContent = 'Score saved! Your Yodea Score: ' + score + ' pts. Check your inbox for your full report.';
+  successEl.style.display = 'block';
+  sendToBeehiiv(email);
+}
  
-  // Show success immediately
-  form.style.display    = 'none';
-  success.style.display = 'block';
+function submitBottom() {
+  var email = document.getElementById('bottom-email').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('bottom-email').style.outline = '2px solid #C4973A';
+    document.getElementById('bottom-email').focus();
+    return;
+  }
+  document.getElementById('bottom-form').style.display = 'none';
+  document.getElementById('bottom-success').style.display = 'block';
+  sendToBeehiiv(email);
+}
  
-  // POST to Netlify Function (calls Beehiiv server-side, avoids CORS)
+function sendToBeehiiv(email) {
+  var numCorrect = correctAnswers.filter(Boolean).length;
+  var score = numCorrect * 250 + (numCorrect === 3 ? 250 : 0);
   fetch('/.netlify/functions/subscribe', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email })
+    body: JSON.stringify({ email: email, score: score, correct: numCorrect })
   })
   .then(function(res) {
     if (!res.ok) console.warn('Signup error:', res.status);
@@ -695,3 +438,4 @@ function submit(section) {
 </script>
 </body>
 </html>
+ 
