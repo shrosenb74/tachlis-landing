@@ -41,15 +41,15 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .nav-cta:hover{background:#2D5C3E}
  
 /* HERO */
-.hero{max-width:680px;margin:0 auto;padding:52px 24px 40px;text-align:center}
+.hero{max-width:680px;margin:0 auto;padding:32px 24px 24px;text-align:center}
 .hero-eyebrow{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(45,122,79,.3);padding:4px 13px;border-radius:100px;margin-bottom:20px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5.5vw,58px);line-height:1.08;letter-spacing:-1.5px;color:var(--ink);margin-bottom:16px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5.5vw,58px);line-height:1.08;letter-spacing:-1.5px;color:var(--ink);margin-bottom:12px}
 .hero h1 em{font-style:italic;color:var(--green)}
-.hero-sub{font-size:17px;line-height:1.65;color:var(--muted);max-width:480px;margin:0 auto 12px;font-weight:300}
+.hero-sub{font-size:15px;line-height:1.6;color:var(--muted);max-width:480px;margin:0 auto 8px;font-weight:300}
 .hero-sub strong{font-weight:500;color:var(--ink)}
  
 /* LESSON CARD */
-.lesson-wrap{max-width:680px;margin:0 auto;padding:0 24px 48px}
+.lesson-wrap{max-width:680px;margin:0 auto;padding:0 24px 24px}
 .lesson-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;text-align:center}
  
 .lesson-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(26,58,42,0.08)}
@@ -61,7 +61,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .lesson-progress-text{font-size:11px;color:rgba(245,240,232,.45)}
  
 /* LESSON STEPS */
-.lesson-step{padding:28px 28px;border-bottom:1px solid var(--parchment-dark);display:none}
+.lesson-step{padding:20px 20px;border-bottom:1px solid var(--parchment-dark);display:none}
 .lesson-step.active{display:block}
 .lesson-step-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
 .lesson-question{font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,22px);line-height:1.3;color:var(--ink);margin-bottom:20px}
@@ -97,10 +97,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .next-btn:hover{background:#2D5C3E}
  
 /* SIGNUP GATE */
-.signup-gate{padding:28px;text-align:center;background:var(--parchment);display:none}
+.signup-gate{padding:20px 16px;text-align:center;background:var(--parchment);display:none}
 .signup-gate.show{display:block}
-.gate-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--ink);margin-bottom:8px;letter-spacing:-.3px}
-.gate-sub{font-size:15px;color:var(--muted);margin-bottom:24px;line-height:1.6;font-weight:300}
+.gate-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px}
+.gate-sub{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;font-weight:300}
 .email-form{display:flex;max-width:380px;margin:0 auto 10px;border:1.5px solid var(--ink);border-radius:100px;overflow:hidden;background:#fff}
 .email-form input{flex:1;border:none;outline:none;padding:13px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:transparent}
 .email-form input::placeholder{color:#aaa9a4}
@@ -231,9 +231,9 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
       
       <!-- Score display -->
       <div id="score-display" style="margin-bottom:20px">
-        <div style="display:inline-flex;flex-direction:column;align-items:center;background:var(--ink);border-radius:16px;padding:20px 36px;margin-bottom:12px">
+        <div style="display:inline-flex;flex-direction:column;align-items:center;background:var(--ink);border-radius:16px;padding:16px 28px;margin-bottom:10px">
           <span style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--sage);margin-bottom:4px">Your Yodea Score</span>
-          <span id="score-number" style="font-family:'Playfair Display',serif;font-size:52px;color:#fff;line-height:1;font-weight:400">0</span>
+          <span id="score-number" style="font-family:'Playfair Display',serif;font-size:44px;color:#fff;line-height:1;font-weight:400">0</span>
           <span id="score-label" style="font-size:13px;color:var(--sage);margin-top:4px">—</span>
         </div>
         <div id="score-breakdown" style="font-size:13px;color:var(--muted);margin-bottom:16px"></div>
@@ -243,7 +243,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
       <p class="gate-sub">Get a new Jewish lesson every day — holidays, prayers, history. 5 minutes. No guilt. Free.</p>
       <div class="email-form" id="gate-form">
         <input type="email" id="gate-email" placeholder="your@email.com"/>
-        <button onclick="submitGate()">Save my score</button>
+        <button onclick="submitGate()" style="font-size:12px;padding:0 14px">Save score →</button>
       </div>
       <div class="success-msg" id="gate-success">Score saved! Check your inbox — your personalised score report is on its way.</div>
       <p class="form-sub" style="margin-top:10px">No spam, ever · Unsubscribe anytime</p>
@@ -438,4 +438,3 @@ function sendToBeehiiv(email) {
 </script>
 </body>
 </html>
- 
