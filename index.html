@@ -326,6 +326,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 var currentStep = 1;
 var answered = [false, false, false];
 var correctAnswers = [false, false, false];
+var emailCaptured = false;
 
 function answer(el, correct) {
   var stepNum = currentStep;
@@ -394,6 +395,7 @@ function submitMid() {
     document.getElementById('mid-email').focus();
     return;
   }
+  emailCaptured = true;
   document.getElementById('mid-form').style.display = 'none';
   document.getElementById('mid-success').style.display = 'block';
   sendToBeehiiv(email);
@@ -448,6 +450,17 @@ function showGate() {
   gate.classList.add('show');
   document.getElementById('progress-fill').style.width = '100%';
   document.getElementById('progress-text').textContent = '3 of 3';
+
+  // If already subscribed — hide form and show a congratulations message instead
+  if (emailCaptured) {
+    document.getElementById('gate-form').style.display = 'none';
+    var successEl = document.getElementById('gate-success');
+    var numCorrect = correctAnswers.filter(Boolean).length;
+    var score = numCorrect * 250 + (numCorrect === 3 ? 250 : 0);
+    successEl.textContent = 'Lesson complete! Your Yodea Score: ' + score + ' pts. Check your inbox for your next lesson.';
+    successEl.style.display = 'block';
+  }
+
   setTimeout(function(){
     gate.scrollIntoView({behavior:'smooth', block:'nearest'});
   }, 100);
