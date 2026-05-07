@@ -177,6 +177,15 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
         person_profiles: 'identified_only',
     })
 </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-969641482"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-969641482');
+</script>
 </head>
 <body>
 
@@ -418,6 +427,10 @@ function submitMid() {
     posthog.identify(email);
     posthog.capture('mid_gate_subscribed');
   }
+  // Google Ads conversion
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion', {'send_to': 'AW-969641482/FcaOCKX9iakcEIqcrs4D'});
+  }
   sendToBeehiiv(email);
   setTimeout(function(){ goToStep(2); }, 1200);
 }
@@ -505,6 +518,10 @@ function submitGate() {
     posthog.identify(email);
     posthog.capture('end_gate_subscribed', { score: score });
   }
+  // Google Ads conversion
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion', {'send_to': 'AW-969641482/FcaOCKX9iakcEIqcrs4D'});
+  }
   sendToBeehiiv(email);
 }
 
@@ -517,6 +534,10 @@ function submitBottom() {
   }
   document.getElementById('bottom-form').style.display = 'none';
   document.getElementById('bottom-success').style.display = 'block';
+  // Google Ads conversion
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion', {'send_to': 'AW-969641482/FcaOCKX9iakcEIqcrs4D'});
+  }
   sendToBeehiiv(email);
 }
 
