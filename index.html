@@ -41,18 +41,18 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 .nav-cta:hover{background:#2D5C3E}
 
 /* HERO */
-.hero{max-width:680px;margin:0 auto;padding:32px 24px 24px;text-align:center}
-.hero-eyebrow{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(45,122,79,.3);padding:4px 13px;border-radius:100px;margin-bottom:20px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5.5vw,58px);line-height:1.08;letter-spacing:-1.5px;color:var(--ink);margin-bottom:12px}
+.hero{max-width:680px;margin:0 auto;padding:20px 24px 16px;text-align:center}
+.hero-eyebrow{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(45,122,79,.3);padding:4px 13px;border-radius:100px;margin-bottom:12px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5.5vw,52px);line-height:1.08;letter-spacing:-1.5px;color:var(--ink);margin-bottom:8px}
 .hero h1 em{font-style:italic;color:var(--green)}
-.hero-sub{font-size:15px;line-height:1.6;color:var(--muted);max-width:480px;margin:0 auto 8px;font-weight:300}
+.hero-sub{font-size:14px;line-height:1.5;color:var(--muted);max-width:480px;margin:0 auto 4px;font-weight:300}
 .hero-sub strong{font-weight:500;color:var(--ink)}
 
 /* LESSON CARD */
-.lesson-wrap{max-width:680px;margin:0 auto;padding:0 24px 24px}
+.lesson-wrap{max-width:680px;margin:0 auto;padding:0 16px 20px}
 .lesson-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;text-align:center}
 
-.lesson-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(26,58,42,0.08)}
+.lesson-card{background:#fff;border:1.5px solid rgba(26,58,42,0.15);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(26,58,42,0.12)}
 .lesson-topbar{background:var(--ink);padding:13px 20px;display:flex;align-items:center;justify-content:space-between}
 .lesson-topic{font-size:11px;font-weight:500;color:rgba(245,240,232,.55);text-transform:uppercase;letter-spacing:.08em}
 .lesson-progress-wrap{display:flex;align-items:center;gap:8px}
@@ -152,6 +152,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 .footer-note{font-size:11px;color:var(--muted)}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 .hero h1{animation:fadeUp .55s ease both}
 .hero-sub{animation:fadeUp .55s .1s ease both}
 .lesson-card{animation:fadeUp .55s .2s ease both}
@@ -188,14 +189,13 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 </nav>
 
 <section class="hero">
-  <div class="hero-eyebrow">Free lesson · No signup needed</div>
-  <h1>Finally <em>know</em><br>your Judaism.</h1>
-  <p class="hero-sub">Try a real Yodea lesson right now — <strong>no email required.</strong> If you like it, get a new one every day.</p>
+  <div class="hero-eyebrow">Free Jewish quiz · No signup needed</div>
+  <h1>What's your<br><span style="color:var(--green);font-style:normal">Jewish IQ?</span></h1>
+  <p class="hero-sub">Answer 3 questions. Find out your Yodea Score. Takes 2 minutes.</p>
+  <div style="margin-top:8px;animation:bounce 1.5s infinite"><span style="font-size:20px">↓</span></div>
 </section>
 
 <section class="lesson-wrap">
-  <p class="lesson-label">Your free lesson — The Shofar</p>
-
   <div class="lesson-card">
     <div class="lesson-topbar">
       <span class="lesson-topic">Jewish Holidays · Rosh Hashanah</span>
@@ -207,7 +207,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 
     <!-- STEP 1 — Question -->
     <div class="lesson-step active" id="step1">
-      <p class="lesson-step-label">Question 1 of 3</p>
+      <p class="lesson-step-label">👇 Tap an answer to start</p>
       <p class="lesson-question">The shofar is blown on Rosh Hashanah. What is it actually made from?</p>
       <div class="choices">
         <div class="choice" onclick="answer(this,false)"><span class="choice-letter">A</span>A carved wooden horn</div>
