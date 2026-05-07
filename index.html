@@ -98,6 +98,21 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 
 /* SIGNUP GATE */
 .signup-gate{padding:20px 16px;text-align:center;background:var(--parchment);display:none}
+.mid-gate{padding:16px 20px;background:linear-gradient(135deg,#1A3A2A,#2D5C3E);display:none;text-align:center}
+.mid-gate.show{display:block}
+.mid-gate-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--parchment);margin-bottom:6px}
+.mid-gate-sub{font-size:13px;color:var(--sage);margin-bottom:14px;line-height:1.5}
+.mid-email-form{display:flex;max-width:340px;margin:0 auto 10px;border:1.5px solid rgba(245,240,232,.4);border-radius:100px;overflow:hidden;background:rgba(245,240,232,.1)}
+.mid-email-form input{flex:1;border:none;outline:none;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;color:#fff;background:transparent;min-width:0}
+.mid-email-form input::placeholder{color:rgba(245,240,232,.45)}
+.mid-email-form button{background:var(--honey);color:var(--ink);border:none;cursor:pointer;padding:0 16px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;border-radius:0 100px 100px 0;white-space:nowrap;flex-shrink:0}
+.mid-gate-skip{font-size:12px;color:rgba(245,240,232,.45);cursor:pointer;text-decoration:underline;background:none;border:none;font-family:'DM Sans',sans-serif}
+.mid-gate-skip:hover{color:rgba(245,240,232,.7)}
+@media(max-width:400px){
+  .mid-email-form{border-radius:12px;flex-direction:column}
+  .mid-email-form input{padding:11px 14px;border-radius:10px 10px 0 0}
+  .mid-email-form button{padding:11px 14px;border-radius:0 0 10px 10px;font-size:13px}
+}
 .signup-gate.show{display:block}
 .gate-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px}
 .gate-sub{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;font-weight:300}
@@ -195,7 +210,19 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   <span class="exp-wrong">Not quite — it's actually a ram's horn. No mouthpiece, no keys, just breath and lip pressure. One of the oldest instruments in the world, and it sounds exactly like you'd expect a parking-lot trumpet from 3,000 BC to sound. That's entirely intentional. It's supposed to wake you up.</span>
 </div>
     </div>
-    <div class="lesson-nav" id="nav1"><button class="next-btn" onclick="goToStep(2)">Next →</button></div>
+    <div class="lesson-nav" id="nav1"><button class="next-btn" onclick="showMidGate()">Next →</button></div>
+
+    <!-- MID-CONTENT GATE -->
+    <div class="mid-gate" id="mid-gate">
+      <p class="mid-gate-title">You're on a roll! 🎺</p>
+      <p class="mid-gate-sub">Get your score + a new Jewish lesson every day — free.</p>
+      <div class="mid-email-form" id="mid-form">
+        <input type="email" id="mid-email" placeholder="your@email.com"/>
+        <button onclick="submitMid()">Continue →</button>
+      </div>
+      <div class="success-msg" id="mid-success" style="background:rgba(245,240,232,.15);border-color:rgba(245,240,232,.3);color:#fff;max-width:340px;margin:0 auto 8px">You're in! Continuing your lesson...</div>
+      <button class="mid-gate-skip" onclick="skipMid()">skip for now →</button>
+    </div>
 
     <!-- STEP 2 — Question -->
     <div class="lesson-step" id="step2">
@@ -340,12 +367,41 @@ function answer(el, correct) {
 function goToStep(n) {
   document.getElementById('step' + (n-1)).classList.remove('active');
   document.getElementById('nav' + (n-1)).classList.remove('show');
+  // hide mid gate if showing
+  var mg = document.getElementById('mid-gate');
+  if (mg) mg.classList.remove('show');
   currentStep = n;
   var nextStep = document.getElementById('step' + n);
   nextStep.classList.add('active');
   setTimeout(function(){
     nextStep.scrollIntoView({behavior:'smooth', block:'nearest'});
   }, 100);
+}
+
+function showMidGate() {
+  document.getElementById('nav1').classList.remove('show');
+  var mg = document.getElementById('mid-gate');
+  mg.classList.add('show');
+  setTimeout(function(){
+    mg.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }, 100);
+}
+
+function submitMid() {
+  var email = document.getElementById('mid-email').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('mid-email').style.outline = '2px solid var(--honey)';
+    document.getElementById('mid-email').focus();
+    return;
+  }
+  document.getElementById('mid-form').style.display = 'none';
+  document.getElementById('mid-success').style.display = 'block';
+  sendToBeehiiv(email);
+  setTimeout(function(){ goToStep(2); }, 1200);
+}
+
+function skipMid() {
+  goToStep(2);
 }
 
 function showGate() {
